@@ -5,6 +5,7 @@ const functionalitySchema = new Schema({
   name: String,
   label: String,
   icon: String,
+  order: Number,
   hidden: Boolean,
   disabled: Boolean,
 })
