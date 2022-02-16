@@ -6,6 +6,9 @@ const cors = require('cors')
 const meals = require('./routes/meals')
 const orders = require('./routes/orders')
 const auth = require('./routes/auth')
+const subsidiary = require('./routes/subsidiary')
+const totem = require('./routes/totem')
+const users = require('./routes/users')
 
 const app = express() 
 app.use(bodyParser.json())
@@ -16,4 +19,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useFindAndModif
 app.use('/api/meals', meals)
 app.use('/api/orders', orders)
 app.use('/api/auth', auth)
+app.use('/api/subsidiaries', subsidiary)
+app.use('/api/totems', totem)
+app.use('/api/users', users)
 module.exports = app
