@@ -1,13 +1,18 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const {
+  v4: uuidv4,
+} = require('uuid');
 
 const functionalitySchema = new Schema({
+  _uid: { type: String, default: uuidv4() },
   name: String,
-  label: String,
+  title: String,
   icon: String,
   order: Number,
-  hidden: Boolean,
-  disabled: Boolean,
+  path: String,
+  hidden: { type: Boolean, default: false },
+  disabled: { type: Boolean, default: false },
 })
 
 const totemSchema = new Schema({
